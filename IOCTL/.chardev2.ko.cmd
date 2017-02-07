@@ -1,0 +1,1 @@
+cmd_/home/samaiya/first_module/IOCTL/chardev2.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/samaiya/first_module/IOCTL/chardev2.ko /home/samaiya/first_module/IOCTL/chardev2.o /home/samaiya/first_module/IOCTL/chardev2.mod.o
