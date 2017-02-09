@@ -37,7 +37,6 @@ int add_fox(struct list_head *head,unsigned int wt, unsigned int tail_len, bool 
 
 int first_module_init(void)
 {
-	int i;	
 	struct fox *head_fox, *ghost_fox;
 
 	head_fox = kmalloc(sizeof(*head_fox), GFP_KERNEL);
@@ -60,17 +59,15 @@ int first_module_init(void)
 
 	//List all the entries of linked list with head_fox as head node
 	list_for_each_entry(ghost_fox, &head_fox->list, list)
-		printk(KERN_ALERT "Lomdi Weight is %d \n ", ghost_fox->weight);
+		printk(KERN_ALERT "Lomdi Weight is %d ", ghost_fox->weight);
 	
 	// Delete node next to head node
-	for (i=1; i<3;i++)
-	{
-		list_del(head_fox->list.prev);
-	}	
+	list_del(head_fox->list.prev);
+	
 	
 	// List specific content of every list node in reverse order 			
-	list_for_each_entry_reverse(ghost_fox, &head_fox->list, list)
-		printk(KERN_ALERT "Lomdi Weight is %d \n ", ghost_fox->weight);
+	list_for_each_entry(ghost_fox, &head_fox->list, list)
+		printk(KERN_ALERT "Lomdi Weight is %d ", ghost_fox->weight);
 	
 	
 	return 0;
@@ -84,7 +81,6 @@ int first_module_exit(void)
 
 module_init(first_module_init);
 module_exit(first_module_exit);
-
 
 
 
