@@ -1,0 +1,1 @@
+cmd_/home/samaiya/first_module/keyboard_led/kbrd.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/samaiya/first_module/keyboard_led/kbrd.ko /home/samaiya/first_module/keyboard_led/kbrd.o /home/samaiya/first_module/keyboard_led/kbrd.mod.o
