@@ -1,0 +1,1 @@
+cmd_/home/samaiya/first_module/IO_mapped/iomap.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/samaiya/first_module/IO_mapped/iomap.ko /home/samaiya/first_module/IO_mapped/iomap.o /home/samaiya/first_module/IO_mapped/iomap.mod.o
