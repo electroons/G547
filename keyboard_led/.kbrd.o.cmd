@@ -596,7 +596,6 @@ deps_/home/samaiya/first_module/keyboard_led/kbrd.o := \
     $(wildcard include/config/have/mod/arch/specific.h) \
     $(wildcard include/config/modules/use/elf/rel.h) \
     $(wildcard include/config/modules/use/elf/rela.h) \
-  include/linux/configfs.h \
   include/linux/tty.h \
     $(wildcard include/config/tty.h) \
     $(wildcard include/config/audit.h) \

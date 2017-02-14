@@ -127,7 +127,7 @@ int __init  init_module()
 		
 		tm = rtc_readTime();
 		printk(KERN_ALERT "%s, %d %s %d, %d:%d:%d\n\n", day[tm.day_of_week], tm.day_of_month, month[tm.month], tm.year, tm.hours, tm.minute, tm.seconds);
-		i++;
+	//	i++;
 	//}        
   
     return 0;
@@ -138,8 +138,6 @@ void  __exit cleanup_module()
 	outb(0x0d, RTC_index);
 }
  
-//module_init(init_module);
-//module_exit(cleanup_module);
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Devesh Samaiya <devesh[at]electroons[dot]com>");
