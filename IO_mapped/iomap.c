@@ -72,7 +72,7 @@ int write_rtcTime(struct rtc_time *tm)
 	return 0;
 }
 
-struct rtc_time rtc_readTime(void)
+struct rtc_time read_rtcTime(void)
 {
 
 	struct rtc_time tm;
@@ -113,9 +113,9 @@ int __init  init_module()
 {
 	int i=0;
 	struct rtc_time set_tm,tm;
-	set_tm.minute =  21;
+	set_tm.minute =  46;
 	set_tm.seconds = 30;
-	set_tm.hours = 2;
+	set_tm.hours = 10;
 	set_tm.year = 17;
 	set_tm.month = 2;
 	set_tm.day_of_week = 4;
@@ -125,7 +125,8 @@ int __init  init_module()
 	//while(i<50)
 	//{
 		
-		tm = rtc_readTime();
+		tm = read_rtcTime();
+		write_rtcTime(&tm);
 		printk(KERN_ALERT "%s, %d %s %d, %d:%d:%d\n\n", day[tm.day_of_week], tm.day_of_month, month[tm.month], tm.year, tm.hours, tm.minute, tm.seconds);
 	//	i++;
 	//}        
