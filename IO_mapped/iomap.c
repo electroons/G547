@@ -1,3 +1,14 @@
+/*
+Kernel module to explain IO mapped hardware access in x86 based systems
+RTC is a legacy device which is now implemented as part of PCH Chipset in modern PCs
+Check your chipset (use $ lshw) datasheet to know more about RTC registers and other details
+
+Author - Devesh Samaiya <devesh@electroons.com>
+Written as part of course EEE G547 - Linux Device Drivers
+BITS Pilani, Pilani Campus, Rajasthan, India 
+*/
+
+
 #include <linux/module.h>
 #include <linux/types.h>
 #include <linux/delay.h>
@@ -12,8 +23,8 @@
 #define HOURS 		0x04
 #define DAY_WEEK 	0x06
 #define DAY_MONTH 	0x07
-#define YEAR 		0x09
 #define MONTH 		0x08
+#define YEAR 		0x09
 
 #define REGA		0x0A
 #define REGB		0x0B
@@ -82,27 +93,21 @@ struct rtc_time read_rtcTime(void)
 
 	outb_p(MINUTES, RTC_index);
 	tm.minute = inb(RTC_data);
-	//printk(KERN_ALERT "MM: %d\n", inb(0x71));	
 
 	outb_p(HOURS, RTC_index);
 	tm.hours = inb(RTC_data); 
-	//printk(KERN_ALERT "HR: %d\n", inb(0x71));
 
 	outb_p(DAY_WEEK, RTC_index);
 	tm.day_of_week = inb(RTC_data);
-	//printk(KERN_ALERT "DAY_WEEK: %d\n", inb(0x71));        
 
 	outb_p(DAY_MONTH, RTC_index);
 	tm.day_of_month = inb(RTC_data);
-	//printk(KERN_ALERT "DAY_MONTH: %d\n", inb(0x71));
 
 	outb_p(MONTH, RTC_index);
 	tm.month = inb(RTC_data);
-	//printk(KERN_ALERT "MONTH: %d\n", inb(0x71));
 		
 	outb(YEAR, RTC_index);
 	tm.year = inb(RTC_data);
-	//printk(KERN_ALERT "YY: %d\n\n\n", inb(0x71));
 
 	outb(0x0d, RTC_index);
 
@@ -113,24 +118,28 @@ int __init  init_module()
 {
 	int i=0;
 	struct rtc_time set_tm,tm;
-	set_tm.minute =  46;
-	set_tm.seconds = 30;
-	set_tm.hours = 10;
+
+	/*filling the time data to be written to RTC
+	  this data will go to RTC via write_rtcTime	*/
+	set_tm.minute =  8;
+	set_tm.seconds = 0;
+	set_tm.hours = 0x0C;
 	set_tm.year = 17;
 	set_tm.month = 2;
 	set_tm.day_of_week = 4;
 	set_tm.day_of_month = 15;
 
+	/*Be careful before using write_rtcTime()
+	It can result in unstable time clock in your computer
+	 it Writes directly to RTC present as part of PCH Chipset*/
+
         //write_rtcTime(&set_tm);
-	//while(i<50)
-	//{
+	
 		
 		tm = read_rtcTime();
 		write_rtcTime(&tm);
 		printk(KERN_ALERT "%s, %d %s %d, %d:%d:%d\n\n", day[tm.day_of_week], tm.day_of_month, month[tm.month], tm.year, tm.hours, tm.minute, tm.seconds);
-	//	i++;
-	//}        
-  
+	
     return 0;
 }
  
