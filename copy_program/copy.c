@@ -1,3 +1,4 @@
+/* File copy example from "Design of UNIX Operating System" by Maurice J. Bach */
 #include<fcntl.h>
 
 char buffer[2048];
