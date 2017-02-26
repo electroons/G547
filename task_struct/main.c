@@ -12,19 +12,24 @@ void device_exit(void);
 module_init(device_init);
 module_exit(device_exit);
 
+static const char state_name[] = TASK_STATE_TO_CHAR_STR;
+
 void device_init(void)
 {
 	struct task_struct *task =  current_thread_info()->task;
-	/*Line above can also be written as */ 
-	//sturct task_struct *task = current
-	printk(KERN_NOTICE "Current process : %s, PID: %d, State: %d", task->comm, task->pid, task->state);
-	printk(KERN_NOTICE "Current process cpu : %d", current_thread_info()->cpu);
+	/*Above line can also be written as */ 
+	//struct task_struct *task = current
+	printk(KERN_NOTICE "current process name : %s", task->comm);
+	printk(KERN_NOTICE "current process pid: %d",task->pid);
+	printk(KERN_NOTICE "current process cpu : %d", current_thread_info()->cpu);
+	printk(KERN_NOTICE "current process state : %c", state_name[task->state]);
+
+		do
+		{
+			task = task->parent;
+			printk(KERN_NOTICE "Parent process: %s, PID: %d, State: %d",task->comm, task->pid, task->state);
+		}while(task->pid != 0);
 	
-	do
-	{
-		task = task->parent;
-		printk(KERN_NOTICE "Parent process: %s, PID: %d, State: %d",task->comm, task->pid, task->state);
-	}while(task->pid != 0);
 }
 
 void device_exit(void)
