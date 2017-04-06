@@ -6,8 +6,9 @@ int version =1 ;
 
 int main(int argc,char *argv[])
 {
-	int fdold, fdnew;
-	
+	int fdold, fdnew, pid;
+	pid = getpid();
+	printf("I am a child process with PID = %d\n", pid);
 	if(argc != 3)
 	{
 		printf("Usage : copy <oldfile> <newfile>\n");
@@ -31,6 +32,7 @@ int main(int argc,char *argv[])
 	}
 
 	copy(fdold, fdnew);
+	
 	exit(0);
 }
 

@@ -1,0 +1,1 @@
+cmd_/home/samaiya/first_module/net/main.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/samaiya/first_module/net/main.ko /home/samaiya/first_module/net/main.o /home/samaiya/first_module/net/main.mod.o
