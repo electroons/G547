@@ -1,0 +1,2 @@
+gcc pdd.c -o basic -L/usr/lib/x86_64-linux-gnu/ -lusb-1.0
+

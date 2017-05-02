@@ -1,0 +1,1 @@
+cmd_/home/samaiya/G547/gpio/gpiom.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/samaiya/G547/gpio/gpiom.ko /home/samaiya/G547/gpio/gpiom.o /home/samaiya/G547/gpio/gpiom.mod.o
