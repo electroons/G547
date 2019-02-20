@@ -1,1 +1,0 @@
-cmd_/home/samaiya/lddbook/ldd-code/drivers/ch1-led/leds.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/samaiya/lddbook/ldd-code/drivers/ch1-led/leds.ko /home/samaiya/lddbook/ldd-code/drivers/ch1-led/leds.o /home/samaiya/lddbook/ldd-code/drivers/ch1-led/leds.mod.o

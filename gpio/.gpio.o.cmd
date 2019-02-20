@@ -1,4 +1,4 @@
-cmd_/home/samaiya/first_module/gpio/gpio.o := gcc -Wp,-MD,/home/samaiya/first_module/gpio/.gpio.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-linux-gnu/5/include  -I./arch/x86/include -Iarch/x86/include/generated/uapi -Iarch/x86/include/generated  -Iinclude -I./arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I./include/uapi -Iinclude/generated/uapi -include ./include/linux/kconfig.h -Iubuntu/include  -D__KERNEL__ -fno-pie -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -std=gnu89 -fno-PIE -fno-pie -no-pie -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -m64 -falign-jumps=1 -falign-loops=1 -mno-80387 -mno-fp-ret-in-387 -mpreferred-stack-boundary=3 -mskip-rax-setup -mtune=generic -mno-red-zone -mcmodel=kernel -funit-at-a-time -maccumulate-outgoing-args -DCONFIG_X86_X32_ABI -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_FXSAVEQ=1 -DCONFIG_AS_SSSE3=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -DCONFIG_AS_SHA1_NI=1 -DCONFIG_AS_SHA256_NI=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -fno-delete-null-pointer-checks -Wno-maybe-uninitialized -O2 --param=allow-store-data-races=0 -Wframe-larger-than=1024 -fstack-protector-strong -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -pg -mfentry -DCC_USING_FENTRY -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -Werror=date-time -DCC_HAVE_ASM_GOTO  -DMODULE  -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(gpio)"  -D"KBUILD_MODNAME=KBUILD_STR(gpio)" -c -o /home/samaiya/first_module/gpio/.tmp_gpio.o /home/samaiya/first_module/gpio/gpio.c
+cmd_/home/samaiya/first_module/gpio/gpio.o := gcc -Wp,-MD,/home/samaiya/first_module/gpio/.gpio.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-linux-gnu/5/include  -I./arch/x86/include -Iarch/x86/include/generated/uapi -Iarch/x86/include/generated  -Iinclude -I./arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I./include/uapi -Iinclude/generated/uapi -include ./include/linux/kconfig.h -Iubuntu/include  -D__KERNEL__ -fno-pie -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -std=gnu89 -fno-PIE -fno-pie -no-pie -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -m64 -falign-jumps=1 -falign-loops=1 -mno-80387 -mno-fp-ret-in-387 -mpreferred-stack-boundary=3 -mskip-rax-setup -mtune=generic -mno-red-zone -mcmodel=kernel -funit-at-a-time -maccumulate-outgoing-args -DCONFIG_X86_X32_ABI -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_FXSAVEQ=1 -DCONFIG_AS_SSSE3=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -DCONFIG_AS_SHA1_NI=1 -DCONFIG_AS_SHA256_NI=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mindirect-branch=thunk-extern -mindirect-branch-register -DRETPOLINE -fno-delete-null-pointer-checks -Wno-maybe-uninitialized -O2 --param=allow-store-data-races=0 -DCC_HAVE_ASM_GOTO -Wframe-larger-than=1024 -fstack-protector-strong -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -pg -mfentry -DCC_USING_FENTRY -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fno-stack-check -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -Werror=date-time  -DMODULE  -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(gpio)"  -D"KBUILD_MODNAME=KBUILD_STR(gpio)" -c -o /home/samaiya/first_module/gpio/.tmp_gpio.o /home/samaiya/first_module/gpio/gpio.c
 
 source_/home/samaiya/first_module/gpio/gpio.o := /home/samaiya/first_module/gpio/gpio.c
 
@@ -117,6 +117,7 @@ deps_/home/samaiya/first_module/gpio/gpio.o := \
   arch/x86/include/asm/pgtable_types.h \
     $(wildcard include/config/kmemcheck.h) \
     $(wildcard include/config/mem/soft/dirty.h) \
+    $(wildcard include/config/page/table/isolation.h) \
     $(wildcard include/config/proc/fs.h) \
   arch/x86/include/asm/pgtable_64_types.h \
   arch/x86/include/asm/sparsemem.h \
@@ -217,12 +218,12 @@ deps_/home/samaiya/first_module/gpio/gpio.o := \
   include/asm-generic/memory_model.h \
     $(wildcard include/config/discontigmem.h) \
     $(wildcard include/config/sparsemem/vmemmap.h) \
+  include/linux/pfn.h \
   include/asm-generic/getorder.h \
   arch/x86/include/asm/cpufeature.h \
     $(wildcard include/config/x86/feature/names.h) \
     $(wildcard include/config/x86/debug/static/cpu/has.h) \
   arch/x86/include/asm/processor.h \
-    $(wildcard include/config/m486.h) \
     $(wildcard include/config/xen.h) \
   arch/x86/include/asm/math_emu.h \
   arch/x86/include/uapi/asm/sigcontext.h \
@@ -509,6 +510,7 @@ deps_/home/samaiya/first_module/gpio/gpio.o := \
   include/xen/features.h \
   include/xen/interface/features.h \
   arch/x86/include/asm/pvclock.h \
+    $(wildcard include/config/kvm/guest.h) \
   include/linux/clocksource.h \
     $(wildcard include/config/arch/clocksource/data.h) \
     $(wildcard include/config/clocksource/watchdog.h) \
@@ -531,7 +533,6 @@ deps_/home/samaiya/first_module/gpio/gpio.o := \
   include/linux/percpu.h \
     $(wildcard include/config/need/per/cpu/embed/first/chunk.h) \
     $(wildcard include/config/need/per/cpu/page/first/chunk.h) \
-  include/linux/pfn.h \
   include/linux/elf.h \
   arch/x86/include/asm/elf.h \
     $(wildcard include/config/x86/x32/abi.h) \
@@ -549,6 +550,7 @@ deps_/home/samaiya/first_module/gpio/gpio.o := \
     $(wildcard include/config/userfaultfd.h) \
     $(wildcard include/config/aio.h) \
     $(wildcard include/config/mmu/notifier.h) \
+    $(wildcard include/config/arch/want/batched/unmap/tlb/flush.h) \
   include/linux/auxvec.h \
   include/uapi/linux/auxvec.h \
   include/linux/uprobes.h \
@@ -571,6 +573,7 @@ deps_/home/samaiya/first_module/gpio/gpio.o := \
     $(wildcard include/config/ppc64.h) \
   include/linux/rbtree_latch.h \
   arch/x86/include/asm/module.h \
+    $(wildcard include/config/m486.h) \
     $(wildcard include/config/m586.h) \
     $(wildcard include/config/m586tsc.h) \
     $(wildcard include/config/m586mmx.h) \
@@ -609,6 +612,68 @@ deps_/home/samaiya/first_module/gpio/gpio.o := \
   include/linux/pinctrl/devinfo.h \
   include/linux/pinctrl/consumer.h \
   include/linux/seq_file.h \
+  include/linux/fs.h \
+    $(wildcard include/config/fs/posix/acl.h) \
+    $(wildcard include/config/security.h) \
+    $(wildcard include/config/cgroup/writeback.h) \
+    $(wildcard include/config/ima.h) \
+    $(wildcard include/config/fsnotify.h) \
+    $(wildcard include/config/epoll.h) \
+    $(wildcard include/config/file/locking.h) \
+    $(wildcard include/config/quota.h) \
+    $(wildcard include/config/blk/dev/loop.h) \
+    $(wildcard include/config/fs/dax.h) \
+    $(wildcard include/config/block.h) \
+    $(wildcard include/config/migration.h) \
+  include/linux/kdev_t.h \
+  include/uapi/linux/kdev_t.h \
+  include/linux/dcache.h \
+  include/linux/rculist.h \
+  include/linux/rculist_bl.h \
+  include/linux/list_bl.h \
+  include/linux/bit_spinlock.h \
+  include/linux/lockref.h \
+    $(wildcard include/config/arch/use/cmpxchg/lockref.h) \
+  include/linux/path.h \
+  include/linux/list_lru.h \
+    $(wildcard include/config/memcg/kmem.h) \
+  include/linux/shrinker.h \
+  include/linux/radix-tree.h \
+  include/linux/pid.h \
+  include/linux/capability.h \
+  include/uapi/linux/capability.h \
+  include/linux/semaphore.h \
+  include/uapi/linux/fiemap.h \
+  include/linux/migrate_mode.h \
+  include/linux/percpu-rwsem.h \
+  include/linux/rcu_sync.h \
+  include/linux/blk_types.h \
+    $(wildcard include/config/blk/cgroup.h) \
+    $(wildcard include/config/blk/dev/integrity.h) \
+  include/uapi/linux/fs.h \
+  include/uapi/linux/limits.h \
+  include/linux/quota.h \
+    $(wildcard include/config/quota/netlink/interface.h) \
+  include/linux/percpu_counter.h \
+  include/uapi/linux/dqblk_xfs.h \
+  include/linux/dqblk_v1.h \
+  include/linux/dqblk_v2.h \
+  include/linux/dqblk_qtree.h \
+  include/linux/projid.h \
+  include/uapi/linux/quota.h \
+  include/linux/nfs_fs_i.h \
+  include/linux/fcntl.h \
+  include/uapi/linux/fcntl.h \
+  arch/x86/include/uapi/asm/fcntl.h \
+  include/uapi/asm-generic/fcntl.h \
+  include/linux/cred.h \
+    $(wildcard include/config/debug/credentials.h) \
+    $(wildcard include/config/keys.h) \
+  include/linux/key.h \
+  include/linux/assoc_array.h \
+    $(wildcard include/config/associative/array.h) \
+  include/linux/selinux.h \
+    $(wildcard include/config/security/selinux.h) \
   include/linux/pinctrl/pinctrl-state.h \
   include/linux/ratelimit.h \
   arch/x86/include/asm/device.h \
@@ -690,60 +755,6 @@ deps_/home/samaiya/first_module/gpio/gpio.o := \
     $(wildcard include/config/time/low/res.h) \
     $(wildcard include/config/timerfd.h) \
   include/linux/timerqueue.h \
-  include/linux/fs.h \
-    $(wildcard include/config/fs/posix/acl.h) \
-    $(wildcard include/config/security.h) \
-    $(wildcard include/config/cgroup/writeback.h) \
-    $(wildcard include/config/ima.h) \
-    $(wildcard include/config/fsnotify.h) \
-    $(wildcard include/config/epoll.h) \
-    $(wildcard include/config/file/locking.h) \
-    $(wildcard include/config/quota.h) \
-    $(wildcard include/config/blk/dev/loop.h) \
-    $(wildcard include/config/fs/dax.h) \
-    $(wildcard include/config/block.h) \
-    $(wildcard include/config/migration.h) \
-  include/linux/kdev_t.h \
-  include/uapi/linux/kdev_t.h \
-  include/linux/dcache.h \
-  include/linux/rculist.h \
-  include/linux/rculist_bl.h \
-  include/linux/list_bl.h \
-  include/linux/bit_spinlock.h \
-  include/linux/lockref.h \
-    $(wildcard include/config/arch/use/cmpxchg/lockref.h) \
-  include/linux/path.h \
-  include/linux/list_lru.h \
-    $(wildcard include/config/memcg/kmem.h) \
-  include/linux/shrinker.h \
-  include/linux/radix-tree.h \
-  include/linux/pid.h \
-  include/linux/capability.h \
-  include/uapi/linux/capability.h \
-  include/linux/semaphore.h \
-  include/uapi/linux/fiemap.h \
-  include/linux/migrate_mode.h \
-  include/linux/percpu-rwsem.h \
-  include/linux/rcu_sync.h \
-  include/linux/blk_types.h \
-    $(wildcard include/config/blk/cgroup.h) \
-    $(wildcard include/config/blk/dev/integrity.h) \
-  include/uapi/linux/fs.h \
-  include/uapi/linux/limits.h \
-  include/linux/quota.h \
-    $(wildcard include/config/quota/netlink/interface.h) \
-  include/linux/percpu_counter.h \
-  include/uapi/linux/dqblk_xfs.h \
-  include/linux/dqblk_v1.h \
-  include/linux/dqblk_v2.h \
-  include/linux/dqblk_qtree.h \
-  include/linux/projid.h \
-  include/uapi/linux/quota.h \
-  include/linux/nfs_fs_i.h \
-  include/linux/fcntl.h \
-  include/uapi/linux/fcntl.h \
-  arch/x86/include/uapi/asm/fcntl.h \
-  include/uapi/asm-generic/fcntl.h \
   include/linux/sched.h \
     $(wildcard include/config/sched/debug.h) \
     $(wildcard include/config/lockup/detector.h) \
@@ -756,7 +767,6 @@ deps_/home/samaiya/first_module/gpio/gpio.o := \
     $(wildcard include/config/inotify/user.h) \
     $(wildcard include/config/fanotify.h) \
     $(wildcard include/config/posix/mqueue.h) \
-    $(wildcard include/config/keys.h) \
     $(wildcard include/config/perf/events.h) \
     $(wildcard include/config/bpf/syscall.h) \
     $(wildcard include/config/sched/info.h) \
@@ -768,14 +778,13 @@ deps_/home/samaiya/first_module/gpio/gpio.o := \
     $(wildcard include/config/cgroup/sched.h) \
     $(wildcard include/config/blk/dev/io/trace.h) \
     $(wildcard include/config/compat/brk.h) \
+    $(wildcard include/config/cgroups.h) \
     $(wildcard include/config/sysvipc.h) \
     $(wildcard include/config/auditsyscall.h) \
     $(wildcard include/config/rt/mutexes.h) \
     $(wildcard include/config/task/xacct.h) \
     $(wildcard include/config/cpusets.h) \
-    $(wildcard include/config/cgroups.h) \
     $(wildcard include/config/futex.h) \
-    $(wildcard include/config/arch/want/batched/unmap/tlb/flush.h) \
     $(wildcard include/config/fault/injection.h) \
     $(wildcard include/config/latencytop.h) \
     $(wildcard include/config/function/graph/tracer.h) \
@@ -839,13 +848,6 @@ deps_/home/samaiya/first_module/gpio/gpio.o := \
   include/linux/task_io_accounting.h \
     $(wildcard include/config/task/io/accounting.h) \
   include/linux/latencytop.h \
-  include/linux/cred.h \
-    $(wildcard include/config/debug/credentials.h) \
-  include/linux/key.h \
-  include/linux/assoc_array.h \
-    $(wildcard include/config/associative/array.h) \
-  include/linux/selinux.h \
-    $(wildcard include/config/security/selinux.h) \
   include/uapi/linux/magic.h \
   include/linux/cgroup-defs.h \
   include/linux/percpu-refcount.h \

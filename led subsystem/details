@@ -1,5 +1,0 @@
-sudo echo 1> /sys/class/leds/demo-led\:g\:dummy/brightness
-
-sudo echo 510> /sys/class/gpio/gpiochip500/subsystem/export
-
-sudo echo 511> /sys/class/gpio/gpiochip500/subsystem/export

@@ -46,7 +46,7 @@ void mmc_request(struct request_queue *q)
 			continue;
 		}
 		printk(KERN_ALERT "Inside request function\n");
-
+		printk(KERN_ALERT "Target Sector No. %d ", req->__sector);
 		if ( ! __blk_end_request_cur(req, 0) ) {
 			req = blk_fetch_request(q);
 		}
