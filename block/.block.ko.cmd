@@ -1,0 +1,1 @@
+cmd_/home/samaiya/first_module/block/block.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/samaiya/first_module/block/block.ko /home/samaiya/first_module/block/block.o /home/samaiya/first_module/block/block.mod.o

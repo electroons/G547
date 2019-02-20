@@ -1,0 +1,1 @@
+cmd_/home/samaiya/first_module/gpio/gpio_bc.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/samaiya/first_module/gpio/gpio_bc.ko /home/samaiya/first_module/gpio/gpio_bc.o /home/samaiya/first_module/gpio/gpio_bc.mod.o
