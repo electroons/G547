@@ -11,7 +11,7 @@
 #define NR_OF_SECTORS 1024
 #define SECTOR_SIZE 512
 #define CARD_CAPACITY  (NR_OF_SECTORS*SECTOR_SIZE)
-#define MAJOR_NO 125
+#define MAJOR_NO 166
 
 int err =0;
 
@@ -58,7 +58,7 @@ int block_init(void)
 {
 	struct gendisk *mmc_disk = NULL;
 
-	err = register_blkdev(MAJOR_NO, "MMC DISK");
+	err = register_blkdev(0, "MMC DISK");
 	if (err < 0) 
 		printk(KERN_WARNING "DiskonRAM: unable to get major number\n");
 	

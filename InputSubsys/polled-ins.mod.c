@@ -22,10 +22,10 @@ static const struct modversion_info ____versions[]
 __used
 __attribute__((section("__versions"))) = {
 	{ 0x7377b0b2, __VMLINUX_SYMBOL_STR(module_layout) },
-	{ 0xfe85818f, __VMLINUX_SYMBOL_STR(gpiochip_remove) },
-	{ 0x377b04df, __VMLINUX_SYMBOL_STR(gpiochip_add) },
+	{ 0x45cbbb6e, __VMLINUX_SYMBOL_STR(platform_device_put) },
 	{ 0x27e1a049, __VMLINUX_SYMBOL_STR(printk) },
-	{ 0xbdfb6dbb, __VMLINUX_SYMBOL_STR(__fentry__) },
+	{ 0xc62525cc, __VMLINUX_SYMBOL_STR(platform_device_add) },
+	{ 0x85405bf6, __VMLINUX_SYMBOL_STR(platform_device_alloc) },
 };
 
 static const char __module_depends[]
@@ -34,4 +34,4 @@ __attribute__((section(".modinfo"))) =
 "depends=";
 
 
-MODULE_INFO(srcversion, "F977E86ACCC88BFCABF20BD");
+MODULE_INFO(srcversion, "2E292293AC4F3674AEB8A5C");

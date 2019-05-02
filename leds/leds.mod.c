@@ -14,12 +14,16 @@ __attribute__((section(".gnu.linkonce.this_module"))) = {
 	.arch = MODULE_ARCH_INIT,
 };
 
+#ifdef RETPOLINE
+MODULE_INFO(retpoline, "Y");
+#endif
+
 static const struct modversion_info ____versions[]
 __used
 __attribute__((section("__versions"))) = {
-	{ 0x3d6976bf, __VMLINUX_SYMBOL_STR(module_layout) },
-	{ 0xad570a4a, __VMLINUX_SYMBOL_STR(led_classdev_unregister) },
-	{ 0x27884207, __VMLINUX_SYMBOL_STR(led_classdev_register) },
+	{ 0x7377b0b2, __VMLINUX_SYMBOL_STR(module_layout) },
+	{ 0x22a456a, __VMLINUX_SYMBOL_STR(led_classdev_unregister) },
+	{ 0x7ad8029c, __VMLINUX_SYMBOL_STR(led_classdev_register) },
 	{ 0x733c3b54, __VMLINUX_SYMBOL_STR(kasprintf) },
 	{ 0x27e1a049, __VMLINUX_SYMBOL_STR(printk) },
 	{ 0xbdfb6dbb, __VMLINUX_SYMBOL_STR(__fentry__) },
