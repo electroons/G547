@@ -24,7 +24,7 @@ struct usbdev_private
 
 struct usbdev_private *p_usbdev_info;
 
-/*static void usbdev_wakeup_on_completion(struct urb *urb);
+static void usbdev_wakeup_on_completion(struct urb *urb);
 static int usbdev_bulk_raw(int dir, struct usbdev_private *p_usbdev, unsigned char *data, unsigned int len);
 
 int usbdev_bulk_data_out(struct usbdev_private *p_usbdev, unsigned char *src, unsigned int len)
@@ -165,7 +165,7 @@ static void usbdev_wakeup_on_completion(struct urb *urb)
 	complete(urb_done_ptr);
 	return; 
 }
-*/
+
 
 /*table of devices that work with this driver*/
 static struct usb_device_id usbdev_table [] = {
